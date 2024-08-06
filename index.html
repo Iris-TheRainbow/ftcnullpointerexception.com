@@ -37,20 +37,16 @@
                     const date = new Date();
                     let day = date.getDate();
                     let month = date.getMonth() + 1;
-                    var event = 0
 
                     console.log(response.data.data.teamByNumber.events);
                     for (let i = 0; i < (response.data.data.teamByNumber.events).length; i++) {
                         let event = response.data.data.teamByNumber.events[i].event
                         console.log(event);
-                        let eventDate = event.start
-                        if (date === eventDate){
-                            console.log("event Today!")
-                        }
-                        if (date < eventDate){
-                            console.log("event is in the future")
-                            event = i
-                            break
+                        if (parseInt(event.start.split("-")[1]) === month){
+                            if (parseInt(event.start.split("-")[2]) === day){
+                                console.log("event today!")
+                            }
+
                         }
                     
                     }
