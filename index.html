@@ -19,7 +19,7 @@
             function getEvents(){
                 axios.post("https://api.ftcscout.org/graphql", {
                     query: `{
-                        teamByNumber(number: redacted){
+                        teamByNumber(number: 15031){
                             events(season: 2023){
                                 event{
                                     name
