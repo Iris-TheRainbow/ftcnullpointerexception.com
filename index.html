@@ -14,13 +14,48 @@
                 margin-bottom: 0;
             }
         </style>
-        <!––
-        script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"/script
-        script src='scripts/ftcscout.js'/script
-        ––>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script lang="js">
+            function getEvents(){
+                axios.post("https://api.ftcscout.org/graphql", {
+                    query: `{
+                        teamByNumber(number: redacted){
+                            events(season: 2023){
+                                event{
+                                    name
+                                    location{
+                                        city
+                                    }
+                                    start
+                                    end
+                                }
+                            }
+                        }
+                    }`
+                })
+                .then(response => { 
+                    const date = new Date();
+                    let day = date.getDate();
+                    let month = date.getMonth() + 1;
+
+                    console.log(response.data.data.teamByNumber.events);
+                    for (let i = 0; i < (response.data.data.teamByNumber.events).length; i++) {
+                        let event = response.data.data.teamByNumber.events[i].event
+                        console.log(event);
+                        if (parseInt(event.start.split("-")[1]) === month){
+                            if (parseInt(event.start.split("-")[2]) === day){
+                                console.log("event today!")
+                            }
+
+                        }
+                    
+                    }
+                })
+            }
+        </script>
     </head>
 
-    <body style="background-color: #323232; color: azure; font-family: Arial, Helvetica, sans-serif; padding: 30px 15px 15px;">
+    <body onload="getEvents()" style="background-color: #323232; color: azure; font-family: Arial, Helvetica, sans-serif; padding: 30px 15px 15px;">
         <div class ="center">
             <h1 class="center">
                 FTC BoltBusterZ
