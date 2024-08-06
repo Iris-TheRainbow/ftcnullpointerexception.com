@@ -16,8 +16,8 @@
         </style>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script lang="js">
-            function getEvents(){
-                axios.post("https://api.ftcscout.org/graphql", {
+            async function getEvents(){
+                await axios.post("https://api.ftcscout.org/graphql", {
                     query: `{
                         teamByNumber(number: 15031){
                             events(season: 2023){
@@ -27,28 +27,53 @@
                                         city
                                     }
                                     start
-                                    end
                                 }
                             }
                         }
                     }`
                 })
                 .then(response => { 
-                    const date = new Date();
+                    const date = new Date("2023-12-01");
+                    console.log(date);
                     let day = date.getDate();
                     let month = date.getMonth() + 1;
-
-                    console.log(response.data.data.teamByNumber.events);
+                    var next = 0;
+                    let dates = [];
                     for (let i = 0; i < (response.data.data.teamByNumber.events).length; i++) {
-                        let event = response.data.data.teamByNumber.events[i].event
-                        console.log(event);
-                        if (parseInt(event.start.split("-")[1]) === month){
-                            if (parseInt(event.start.split("-")[2]) === day){
-                                console.log("event today!")
-                            }
-
+                        let event = response.data.data.teamByNumber.events[i].event;
+                        let eventDate = new Date(event.start);
+                        eventDate.setUTCHours(6);
+                        if (date <= eventDate){
+                            dates.push(eventDate);
                         }
-                    
+                    }
+                    if (dates.length != 0){
+                        let targetDate = dates.reduce(function (a, b) {
+                            return a < b ? a : b;
+                        });
+                        console.log(targetDate);
+                        if (date == targetDate){
+                            console.log("event Today!");
+                        }
+                        if (date < targetDate){
+                            console.log("event is in the future");
+                        }
+                        for (let i = 0; i < (response.data.data.teamByNumber.events).length; i++) {
+                            let event = response.data.data.teamByNumber.events[i].event;
+                            let eventDay = new Date(event.start);
+                            if (eventDay === targetDate){
+                                document.getElementById("time").innerHTML = "BoltBusterZ is competing <b>today</b> at <b>" + event.location.city + "</b> for <b>"  + event.name + "</b>";
+                            }
+                            if (eventDay > targetDate){
+                                let daysUntil = Math.round((eventDay - date) / (1000 * 3600 * 24));
+                                document.getElementById("time").innerHTML = "BoltBusterZ is competing <b> in " + daysUntil + " days</b> at <b>" + event.location.city + "</b> for <b>"  + event.name + "</b>";
+                                break;
+                            }
+                        }
+
+                    }
+                    else{
+                        console.log("all events complete");
                     }
                 })
             }
@@ -67,6 +92,8 @@
                 and are a member of <b>Illinois Central</b> league.
                 <br> 
                 We have a passion for robotcs and FTC as a whole and want to do our absolute best to improve the FTC community
+                <br><br>
+                <span id="time"></span>
 
             </p>
         </div>
