@@ -6,7 +6,6 @@
 }
 p {
     font-size: 150%;
-    margin-bottom: 0;
     padding-left: 2.5%;
     padding-right: 2.5%
 }
@@ -71,9 +70,16 @@ button:hover{
     width: auto;
     margin-left: .25%;
     margin-right: .25%;
+
 }
 
 .headderContainer{
     display: flex;
-    margin: 2.5%;
+    margin-bottom: -3%;
+}
+
+.headderColumn{
+    float: left;
+    margin-left: .25%;
+    margin-right: .25%;
 }

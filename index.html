@@ -26,12 +26,12 @@
                     }`
                 })
                     .then(response => {
-                        const specificDate = new Date("2023-2-1");
+                        const specificDate = new Date("2023-2-1".replace(/-/g, "/"));
 
                         const events = response.data.data.teamByNumber.events;
                         const dates = events
                             .map(it => it.event)
-                            .map(it => new Date(it.start))
+                            .map(it => new Date(it.start.replace(/-/g, "/")))
                             .filter(it => specificDate <= it)
                             
                         document.getElementById("time").innerHTML = "BoltBusterZ have competed in all of their events this season";
@@ -46,7 +46,7 @@
                                 .map(it => ({
                                     event: it.event,
                                     date: new Date(it.event.start),
-                                    days: Math.round(((new Date(it.event.start)) - specificDate) / (1000 * 60 * 60 * 24))
+                                    days: Math.round(((new Date(it.event.start.replace(/-/g, "/"))) - specificDate) / (1000 * 60 * 60 * 24))
                                 }))
                                 .filter(it => it.days > 0)
                                 .sort((a, b) => a.days - b.days)
