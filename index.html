@@ -4,19 +4,23 @@
         <style>
             .center {
                 margin: auto;
-                width: 85%;
+                width: 70%;
                 padding: 8px;
                 align-content: center;
             }
             .pg {
                 line-height: 1.4;
-                font-size: 18px;
+                font-size: 150%;
                 margin-bottom: 0;
             }
         </style>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script lang="js">
-            async function getEvents(){
+            const competing = ({ location, name }, slot) => `BoltBusterZ is competing ${slot} in <b>${location.city}</b> for <b>${name}</b>`
+            const competingToday = event => competing(event, "<b>today</b>")
+            const competingLater = (event, days) => competing(event, `<b>in ${days} days</b>`)
+
+            async function getEvents() {
                 await axios.post("https://api.ftcscout.org/graphql", {
                     query: `{
                         teamByNumber(number: 15031){
@@ -32,57 +36,67 @@
                         }
                     }`
                 })
-                .then(response => { 
-                    const date = new Date("2023-12-01");
-                    console.log(date);
-                    let day = date.getDate();
-                    let month = date.getMonth() + 1;
-                    var next = 0;
-                    let dates = [];
-                    for (let i = 0; i < (response.data.data.teamByNumber.events).length; i++) {
-                        let event = response.data.data.teamByNumber.events[i].event;
-                        let eventDate = new Date(event.start);
-                        eventDate.setUTCHours(6);
-                        if (date <= eventDate){
-                            dates.push(eventDate);
-                        }
-                    }
-                    if (dates.length != 0){
-                        let targetDate = dates.reduce(function (a, b) {
-                            return a < b ? a : b;
-                        });
-                        console.log(targetDate);
-                        if (date == targetDate){
-                            console.log("event Today!");
-                        }
-                        if (date < targetDate){
-                            console.log("event is in the future");
-                        }
-                        for (let i = 0; i < (response.data.data.teamByNumber.events).length; i++) {
-                            let event = response.data.data.teamByNumber.events[i].event;
-                            let eventDay = new Date(event.start);
-                            if (eventDay === targetDate){
-                                document.getElementById("time").innerHTML = "BoltBusterZ is competing <b>today</b> at <b>" + event.location.city + "</b> for <b>"  + event.name + "</b>";
-                            }
-                            if (eventDay > targetDate){
-                                let daysUntil = Math.round((eventDay - date) / (1000 * 3600 * 24));
-                                document.getElementById("time").innerHTML = "BoltBusterZ is competing <b> in " + daysUntil + " days</b> at <b>" + event.location.city + "</b> for <b>"  + event.name + "</b>";
-                                break;
-                            }
-                        }
+                    .then(response => {
+                        const specificDate = new Date("2023-2-1");
 
-                    }
-                    else{
-                        console.log("all events complete");
-                    }
-                })
+                        const events = response.data.data.teamByNumber.events;
+                        const dates = events
+                            .map(it => it.event)
+                            .map(it => new Date(it.start))
+                            .filter(it => specificDate <= it)
+                            
+                        document.getElementById("time").innerHTML = "BoltBusterZ have competed in all of their events this season";
+                        if (dates.length > 0){
+                            const target = dates.reduce((a, b) => a < b ? a : b)
+
+
+                            if (dates.length === 0)      { console.log("all events completed") }
+                            if (specificDate === target) { console.log("event today!") }
+                            if (specificDate < target)   { console.log("event is in the future") }
+                            const sorted = events
+                                .map(it => ({
+                                    event: it.event,
+                                    date: new Date(it.event.start),
+                                    days: Math.round(((new Date(it.event.start)) - specificDate) / (1000 * 60 * 60 * 24))
+                                }))
+                                .filter(it => it.days > 0)
+                                .sort((a, b) => a.days - b.days)
+                                .map(it => {
+                                    const { date, event, days } = it
+                                    if (date < target) return competingLater(event, days)
+                                    if (date === target) return competingToday(event)
+                                    if (date > target) return competingLater(event, days)
+                                    else return competingLater(event, days)
+                                })
+                                .filter(it => it !== null)
+                            document.getElementById("time").innerHTML = sorted[0];
+                        }
+                    })
             }
+        </script>
+        <script lang="js">
+            async function getOpr() {
+                await axios.post("https://api.ftcscout.org/graphql", {
+                    query: `{
+                    teamByNumber(number: 15031){
+                        quickStats(season: 2023){
+                        tot{
+                            value
+                        }
+                        }
+                    }
+                    }`
+                })
+                    .then(response => {
+                        document.title = "Opr: " +Math.round(response.data.data.teamByNumber.quickStats.tot.value * 100)/100
+                    })
+                }
         </script>
     </head>
 
-    <body onload="getEvents()" style="background-color: #323232; color: azure; font-family: Arial, Helvetica, sans-serif; padding: 30px 15px 15px;">
+    <body onload="getEvents(); getOpr()" style="background-color: #323232; color: azure; font-family: Arial, Helvetica, sans-serif; padding: 30px 15px 15px;">
         <div class ="center">
-            <h1 class="center">
+            <h1 style="text-align: center; font-size: 350%;">
                 FTC BoltBusterZ
             </h1>
             <p class="pg">
@@ -94,9 +108,7 @@
                 We have a passion for robotcs and FTC as a whole and want to do our absolute best to improve the FTC community
                 <br><br>
                 <span id="time"></span>
-
             </p>
-        </div>
-        
+        </div>  
     </body> 
 </html>
