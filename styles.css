@@ -21,13 +21,16 @@ h1 {
 }
 h2 {
     font-size: 250%;
-    margin-bottom: 0;
     padding-left: 5%;
-}
-.imgContainer{
-    float:left;
 }
 .img{
     width: 40%;
     padding: 1%;
+}
+a:link, a:visited {
+    color: aqua;
+}
+
+a:hover, a:active {
+    color:red;
 }
