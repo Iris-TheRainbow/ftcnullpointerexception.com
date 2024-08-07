@@ -1,19 +1,7 @@
 <!doctype html>
 <html lang="en-US">
     <head> 
-        <style>
-            .center {
-                margin: auto;
-                width: 70%;
-                padding: 8px;
-                align-content: center;
-            }
-            .pg {
-                line-height: 1.4;
-                font-size: 150%;
-                margin-bottom: 0;
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script lang="js">
             const competing = ({ location, name }, slot) => `BoltBusterZ is competing ${slot} in <b>${location.city}</b> for <b>${name}</b>`
@@ -94,12 +82,12 @@
         </script>
     </head>
 
-    <body onload="getEvents(); getOpr()" style="background-color: #323232; color: azure; font-family: Arial, Helvetica, sans-serif; padding: 30px 15px 15px;">
+    <body onload="getEvents(); getOpr()">
         <div class ="center">
-            <h1 style="text-align: center; font-size: 350%;">
+            <h1>
                 FTC BoltBusterZ
             </h1>
-            <p class="pg">
+            <p>
                 Hello! Welcome to FTC BoltBusterZ!
                 <br><br>
                 We are a robotics team from <b>Paxton Buckley Loda High School</b> in <b>Paxton, Illinois</b> 
