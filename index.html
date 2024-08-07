@@ -3,6 +3,7 @@
     <head> 
         <link rel="stylesheet" href="styles.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="scripts/footer.js"></script>
         <script lang="js">
             const competing = ({ location, name }, slot) => `BoltBusterZ is competing ${slot} in <b>${location.city}</b> for <b>${name}</b>`
             const competingToday = event => competing(event, "<b>today</b>")
@@ -82,7 +83,7 @@
         </script>
     </head>
 
-    <body onload="getEvents(); getOpr()">
+    <body onload="getEvents(); getOpr(); generateFooter()">
         <div style="display: flex; justify-content: center;">
             <div class="center">
                 <h1>
@@ -104,27 +105,8 @@
                 </p>
             </div>
         </div>
-        <div class="footerContainer">
-            <hr>
-            <div>
-                <div style="margin-top: 15px;">
-                    <div class="footerColumn">
-                        <button onclick="window.location.href=''">Home</button>
-                    </div>
-                    <div class="footerColumn">
-                        <button onclick="window.location.href='robots.html'">Robots</button>
-                    </div>
-                    <div class="footerColumn">
-                        <button onclick="window.location.href='sponsors.html'">Sponsors</button>
-                    </div>
-                    <div class="footerColumn">
-                        <button onclick="window.location.href='outreach.html'">Outreach</button>
-                    </div>
-                    <div class="footerColumn">
-                        <button onclick="window.location.href='portfolios.html'">Portfolios</button>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <span id="footer"></span>
         </div>
     </body> 
 </html>

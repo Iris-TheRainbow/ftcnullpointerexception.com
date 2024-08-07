@@ -2,8 +2,10 @@
 <html>
     <head> 
         <link rel="stylesheet" href="styles.css">
+        <script src="scripts/footer.js"></script>
+
     </head>
-    <body>
+    <body onload="generateFooter()">
         <div class ="center" style="align-self: center;">
             <h1 class="center" style="align-self: center;">
                 Portfolios
@@ -12,6 +14,9 @@
                 Centerstage
             </h2>
             <a href="portfolios/cs.pdf"><img src="img/csport.jpg"></a>
+        </div>
+        <div>
+            <span id="footer"></span>
         </div>
     </body> 
 </html>
