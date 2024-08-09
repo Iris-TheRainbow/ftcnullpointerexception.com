@@ -7,9 +7,9 @@
     max-width: 70%;
 }
 p {
-    font-size: 150%;
+    font-size:calc(12px + 100%);
     padding-left: 2.5%;
-    padding-right: 2.5%
+    padding-right: 2.5%;
 }
 body {
     background-color: #323232; 
@@ -34,7 +34,11 @@ a:link, a:visited {
     color: aqua;
 }
 
-a:hover, a:active {
+a:hover {
+    color:red;
+    cursor: pointer;
+}
+a:active{
     color:red;
 }
 hr{
@@ -52,11 +56,12 @@ button {
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
-    font-size: 150%;
+    font-size:calc(12px + 100%);
     opacity: 65%;
 }
 button:hover{
     opacity: 100%;
+    cursor: pointer;    
 }
 
 .footerContainer {
@@ -88,4 +93,15 @@ button:hover{
     margin-left: .25%;
     margin-right: .25%;
     width: fit-content;
+}
+.galleryContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}   
+.galleryContainer img {
+    width: calc(32% - 20px);
+    margin: 10px;
+    height: 100px;
+    max-height: 100px;
 }
