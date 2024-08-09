@@ -74,12 +74,12 @@ button:hover{
     display: flexbox;
 }
 
-.footerColumn{
+.footerContainer div{
     float: left;
     width: auto;
     margin-left: .25%;
     margin-right: .25%;
-
+    margin-bottom: .75%;
 }
 
 .headderContainer{
@@ -100,7 +100,9 @@ button:hover{
     justify-content: space-between;
 }   
 .galleryContainer img {
-    width: calc(32% - 20px);
+    max-width: calc(32% - 20px);
+    height: fit-content;
+    max-height: 60%;
     margin: 10px;
     background-color: azure;
-}
+    }   
