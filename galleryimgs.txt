@@ -4,10 +4,14 @@ img/CSLM1.jpg
 img/sponsorepaxtonwarehouse.jpg
 img/BBZ15031.jpg
 img/boltwithgears.png
+img/PPWhole.jpg
 img/pbl.jpg
 img/boltnogears.png
 img/15031.jpg
 img/PPLeagueTourny.jpg
 img/CSLeagueTourny.jpg
+img/PPGripper.jpg
+img/PPColorSensors.jpg
 img/CSNightBeforeLT2.jpg
 img/CSLM3.jpg
+img/PPWheel.jpg
