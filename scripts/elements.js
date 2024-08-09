@@ -8,16 +8,16 @@ function generateElements(){
                         <button onclick="window.location.href='/'">Home</button>
                     </div>
                     <div class="footerColumn">
-                        <button onclick="window.location.href='robots.html'">Robots</button>
+                        <button onclick="window.location.href='robots'">Robots</button>
                     </div>
                     <div class="footerColumn">
-                        <button onclick="window.location.href='sponsors.html'">Sponsors</button>
+                        <button onclick="window.location.href='sponsors'">Sponsors</button>
                     </div>
                     <div class="footerColumn">
-                        <button onclick="window.location.href='outreach.html'">Outreach</button>
+                        <button onclick="window.location.href='outreach'">Outreach</button>
                     </div>
                     <div class="footerColumn">
-                        <button onclick="window.location.href='portfolios.html'">Portfolios</button>
+                        <button onclick="window.location.href='portfolios'">Portfolios</button>
                     </div>
                     <div class="footerColumn" style="float: right;">
                         <button onclick="window.location.href='mailto:pblhsrobotics@gmail.com'">Email our team!</button>
