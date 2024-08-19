@@ -6,6 +6,7 @@ img/BBZ15031.jpg
 img/boltwithgears.png
 img/PPWhole.jpg
 img/pbl.jpg
+img/CSLTPort.png
 img/boltnogears.png
 img/15031.jpg
 img/PPLeagueTourny.jpg
