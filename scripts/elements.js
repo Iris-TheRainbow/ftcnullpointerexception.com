@@ -25,7 +25,7 @@ function generateElements(){
     document.getElementById("headder").innerHTML = `
         <div class="headderContainer">
             <div class="headderColumn" style="width: fit-content; display: flex;">
-                <button onclick="window.location.href='/'" style="font-size: 350%; width: fit-content; max-width: 45%; background-color: #202020;"><img src="img/boltnogears.png" style="width: 15%; border-radius: 20%; background-color: azure; margin-top: .5vw;"> BoltBusterZ</button>
+                <button onclick="window.location.href='/'" style="font-size: 350%; width: fit-content; max-width: 45%; background-color: #202020;"><img src="img/boltnogears.png"> BoltBusterZ</button>
             </div>
         </div>`
 

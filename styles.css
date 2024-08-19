@@ -6,8 +6,13 @@
     align-content: center;
     max-width: 70%;
 }
+@media only screen and (max-width: 600px){
+    .center {
+        max-width: 90%
+    }
+}
 p {
-    font-size:calc(12px + 100%);
+    font-size: 1.5rem;
     padding-left: 2.5%;
     padding-right: 2.5%;
 }
@@ -20,11 +25,10 @@ body {
 }
 h1 {
     text-align: center;
-    font-size: 350%;
+    font-size: 3.5rem;
 }
 h2 {
-    font-size: 250%;
-    padding-left: 5%;
+    font-size: 2.5rem;
 }
 .img{
     width: 40%;
@@ -56,12 +60,22 @@ button {
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
-    font-size:calc(12px + 100%);
+    font-size:1.5rem;
     opacity: 65%;
+    align-content: center;
 }
+
 button:hover{
     opacity: 100%;
     cursor: pointer;    
+}
+button img {
+    height: auto;
+    width: 15%; 
+    border-radius: 20%; 
+    background-color: azure; 
+    margin-top: .5vw;
+    height: fit-content;
 }
 
 .footerContainer {
@@ -94,14 +108,16 @@ button:hover{
     margin-right: .25%;
     width: fit-content;
 }
+
 .galleryContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }   
+
 .galleryContainer img {
     max-width: calc(32% - 20px);
-    height: fit-contenwdct;
+    height: fit-content;
     max-height: 50%;
     margin: 10px;
     background-color: azure;
