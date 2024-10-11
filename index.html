@@ -5,15 +5,15 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="scripts/elements.js"></script>
         <script lang="js">
-            const competing = ({ location, name }, slot) => `BoltBusterZ is competing ${slot} in <b>${location.city}</b> for <b>${name}</b>`
+            const competing = ({ location, name }, slot) => `Null Pointer Exception is competing ${slot} in <b>${location.city}</b> for <b>${name}</b>`
             const competingToday = event => competing(event, "<b>today</b>")
             const competingLater = (event, days) => competing(event, `<b>in ${days} days</b>`)
 
             async function getEvents() {
                 await axios.post("https://api.ftcscout.org/graphql", {
                     query: `{
-                        teamByNumber(number: 15031){
-                            events(season: 2023){
+                        teamByNumber(number: 27971){
+                            events(season: 2024){
                                 event{
                                     name
                                     location{
@@ -34,7 +34,7 @@
                             .map(it => new Date(it.start.replace(/-/g, "/")))
                             .filter(it => specificDate <= it)
                             
-                        document.getElementById("time").innerHTML = "BoltBusterZ have competed in all of their events this season";
+                        document.getElementById("time").innerHTML = "Null Pointer Exception have competed in all of their events this season";
                         if (dates.length > 0){
                             const target = dates.reduce((a, b) => a < b ? a : b)
 
@@ -67,7 +67,7 @@
             async function getOpr() {
                 await axios.post("https://api.ftcscout.org/graphql", {
                     query: `{
-                    teamByNumber(number: 15031){
+                    teamByNumber(number: 27971){
                         quickStats(season: 2023){
                         tot{
                             value
@@ -94,21 +94,23 @@
         <div style="display: flex; justify-content: center;">
             <div class="center">
                 <h1>
-                    FTC BoltBusterZ
+                    FTC Null Pointer Exception
                 </h1>
                 <p>
-                    Hello! Welcome to FTC BoltBusterZ!
+                    Hello! Welcome to FTC Null Pointer Exception!
                     <br><br>
-                    We are a robotics team from <b>Paxton Buckley Loda High School</b> in <b>Paxton, Illinois</b> 
+                    We are a robotics team from <b>Paxton, Illinois</b> 
                     and are a member of <b>Illinois Central</b> league.
                     <br> 
                     We have a passion for robotcs and FTC as a whole and want to do our absolute best to improve the FTC community
                     <br><br>
                     <span id="time"></span>
                     <br><br>
-                    Our outreach efforts include work on Unofficial REV Port and outreach within our School District, showing off FTC to our peers and younger students. More info can be found <a href="outreach.html">here</a>.
+                    Our outreach efforts include work on Unofficial REV Port and outreach within our area, showing off FTC to our community. More info can be found <a href="outreach.html">here</a>.
                     <br><br>
-                    Our yearly robots can be found <a href="robots.html">here</a>!
+                    We are a team formed from ex members of team 15031, BoltBusterZ. After our school district did not register our team, we still wanted to compete, so we decided to start a new, community team!
+                    <br><br>
+                    Our yearly robots and prior robots from 15031 can be found <a href="robots.html">here</a>!
                 </p>
             </div>
         </div>

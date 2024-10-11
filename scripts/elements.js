@@ -18,14 +18,14 @@ function generateElements(){
                     <button onclick="window.location.href='gallery'">Gallery</button>
                 </div>
                 <div style="float: right;">
-                    <button onclick="window.location.href='mailto:pblhsrobotics@gmail.com'">Email our team!</button>
+                    <button onclick="window.location.href='mailto:nullpointerexception@gmail.com'">Email our team!</button>
                 </div>
             </div>
     `
     document.getElementById("headder").innerHTML = `
         <div class="headderContainer">
             <div class="headderColumn" style="width: fit-content; display: flex;">
-                <button onclick="window.location.href='/'" style="font-size: 350%; width: fit-content; max-width: 45%; background-color: #202020;"><img src="img/boltnogears.png"> BoltBusterZ</button>
+                <button onclick="window.location.href='/'" style="font-size: 350%; width: fit-content; background-color: #202020; color: #a84444;">{NullPointerException}</button>
             </div>
         </div>`
 
