@@ -12,7 +12,7 @@ function generateRobots() {
             short = ""
           }
           console.log(short)
-          string += '<div class="ronot">';
+          string += '<div class="robot">';
             string += '<div ' + short + '>';
                 string += '<h2>';
                     string += robot.name;
