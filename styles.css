@@ -51,11 +51,11 @@ img {
     color: azure;
 }
 a:link, a:visited {
-    color: #7a3131;
+    color: #a84444;
 }
 
 a:hover {
-    color:#a84444;
+    color:#7a3131;
     cursor: pointer;
 }
 a:active{
