@@ -3,7 +3,7 @@
         {
             "name": "Centerstage",
             "description": "This is the robot that our team members competed with on 15031 all season.",
-            "images": ["img/CSLM1.jgp", "img/CSLM3.jpg", "img/CSLeagueTourny.jpg"]
+            "images": ["img/CSLM1.jpg", "img/CSLM3.jpg", "img/CSLeagueTourny.jpg"]
         },
         {
             "name": "Power Play",
