@@ -79,7 +79,7 @@ button {
     font-size:1.5rem;
     opacity: 90%;
     align-content: center;
-    outline: 2px solid #7a3131;
+    outline: 3px solid #7a3131;
     width: fit-content;
     color: azure;
 }
@@ -136,7 +136,7 @@ button img {
     display: flex;
     background-color: #292929;
     padding: 1%;
-    border-bottom: 2px solid #7a3131;
+    border-bottom: 3px solid #7a3131;
 }
 
 .headderColumn{
@@ -160,7 +160,7 @@ button img {
 .galleryColumn img{
     width: 100%;
     margin: 5px;
-    outline: 2px solid #7a3131;
+    outline: 3px solid #7a3131;
     border-radius: 10px;
 }   
 .assignments{
