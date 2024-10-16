@@ -1,10 +1,10 @@
 @keyframes changeOutlineColor  {
-    from {outline-color: #74c7ec; opacity: 70%; scale: 1;}
-    to {outline-color: #cba6f7; opacity: 100%; scale: .95;}
+    from {outline-color: #7a3131; opacity: 70%; scale: 1;}
+    to {outline-color: #a84444; opacity: 100%; scale: .95;}
 }
 @keyframes returnOutlineColor  {
-    from {outline-color: #cba6f7; opacity: 100%; scale: .95;}
-    to {outline-color: #74c7ec; opacity: 70%; scale: 1;}
+    from {outline-color: #a84444; opacity: 100%; scale: .95;}
+    to {outline-color: #7a3131; opacity: 70%; scale: 1;}
 }
 @keyframes buttonClick{
     from {scale: .95;}
@@ -14,7 +14,7 @@
 body {
     padding: 0px;
     background-color: #1e1e2e;
-    color: #cdd6f4;
+    color: azure;
     font-family: Arial, Helvetica, sans-serif; 
     margin: 0px;
 }
@@ -63,7 +63,7 @@ hr{
     max-width: 120%;
     margin-top: 15px;
     margin-bottom: 15px;
-    border-color: 2px solid #74c7ec;
+    border-color: 2px solid #7a3131;
 }
 
 button {
@@ -76,9 +76,9 @@ button {
     font-size:1.5rem;
     opacity: 70%;
     align-content: center;
-    outline: 2px solid #74c7ec;
+    outline: 2px solid #7a3131;
     width: fit-content;
-    color: #cdd6f4;
+    color: azure;
 }
 
 button:active{
@@ -133,7 +133,7 @@ button img {
     display: flex;
     background-color: #181825;
     padding: 1%;
-    border-bottom: 2px solid #74c7ec;
+    border-bottom: 2px solid #7a3131;
 }
 
 .headderColumn{
