@@ -1,6 +1,7 @@
 img/PPLeagueTourny.jpg
 img/CSLM1.jpg
 img/PPWhole.jpg
+img/image.png
 img/PPColorSensors.jpg
 img/CSNightBeforeLT2.jpg
 img/CSLTPort.png
