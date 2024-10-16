@@ -1,10 +1,10 @@
 @keyframes changeOutlineColor  {
-    from {outline-color: #7a3131; opacity: 70%; scale: 1;}
+    from {outline-color: #7a3131; opacity: 90%; scale: 1;}
     to {outline-color: #a84444; opacity: 100%; scale: .95;}
 }
 @keyframes returnOutlineColor  {
     from {outline-color: #a84444; opacity: 100%; scale: .95;}
-    to {outline-color: #7a3131; opacity: 70%; scale: 1;}
+    to {outline-color: #7a3131; opacity: 90%; scale: 1;}
 }
 @keyframes buttonClick{
     from {scale: .95;}
@@ -47,6 +47,9 @@ h2 {
     width: 40%;
     padding: 1%;
 }
+img {
+    color: azure;
+}
 a:link, a:visited {
     color: #7a3131;
 }
@@ -59,7 +62,7 @@ a:active{
     color:#a84444;
 }
 hr{
-    opacity: 70%;
+    opacity: 90%;
     max-width: 120%;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -74,7 +77,7 @@ button {
     text-align: center;
     text-decoration: none;
     font-size:1.5rem;
-    opacity: 70%;
+    opacity: 90%;
     align-content: center;
     outline: 2px solid #7a3131;
     width: fit-content;
