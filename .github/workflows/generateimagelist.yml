@@ -17,7 +17,7 @@ jobs:
           
       - name: run python
         run: |
-          python generatelist.py
+          python scripts/generatelist.py
           
       - name: commit files
         run: |

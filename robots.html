@@ -10,41 +10,14 @@
         <meta name="apple-mobile-web-app-title" content="FTC-NPE" />
         <link rel="manifest" href="/favicons/site.webmanifest" />
     </head>
-    <body onload="generateElements()">
+    <body onload="generateElements(); generatRobots()">
         <span id="headder"></span>
-        <div class ="center" style="align-self: center;">
+        <div class ="center" style="align-self: center; width: 90%;">
             <h1 class="center" style="align-self: center;">
-                Our Robots
+                Our Robots  
             </h1>
-            <div>
-                <h2>
-                    Centerstage:
-                </h2>
-                <p>
-                    This is the robot that BoltBusterZ competed with all year in the 2023-2024 season, Centerstage
-                </p>
-                <div>
-                    <div class="galleryContainer">
-                        <img src="img/CSLM1.jpg">
-                        <img src="img/CSLM3.jpg">
-                        <img src="img/CSLeagueTourny.jpg">
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h2>
-                    PowerPlay:
-                </h2>
-                <p>
-                    BoltBusterZ competed with two bots in the 2022-2023 PowerPlay season, one on a tetrix chassis and another on a gobuilda strafer chassis
-                </p>
-                <div>
-                    <div class="galleryContainer">
-                        <img src="img/PPLeagueTourny.jpg">
-                        <img src="img/PPWheel.jpg">
-                        <img src="img/PPGripper.jpg">
-                    </div>
-                </div>
+            <div class="robots">
+                <span id="robots"></span>
             </div>
         </div>
         <div>

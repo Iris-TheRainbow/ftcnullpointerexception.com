@@ -1,0 +1,14 @@
+{
+    "robots": [
+        {
+            "name": "Centerstage",
+            "description": "This is the robot that our team members competed with on 15031 all season.",
+            "images": ["img/CSLM1.jgp", "img/CSLM3.jpg", "img/CSLeagueTourny.jpg"]
+        },
+        {
+            "name": "Power Play",
+            "description": "In the 2022-2023 season, our team mebers competed with two seperate bots. We learned a lot about desing and had a much better bot by the end of the season.",
+            "images": ["img/PPLeagueTourny.jpg", "img/PPWheel.jpg", "img/PPGripper.jpg" ]
+        }
+    ]
+}

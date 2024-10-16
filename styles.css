@@ -163,19 +163,19 @@ button img {
     outline: 3px solid #7a3131;
     border-radius: 10px;
 }   
-.assignments{
+.robots{
     display: flexbox;
 }
-.assignments img{
+.robots img{
     margin: 10px;
 }
 
-.assignments div{
+.robots div{
     float: left;
     margin: 5px
 }
 
-.asignment {
+.robot {
     width: 100%;
 }
 
