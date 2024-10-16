@@ -1,3 +1,23 @@
+@keyframes changeOutlineColor  {
+    from {outline-color: #74c7ec; opacity: 70%; scale: 1;}
+    to {outline-color: #cba6f7; opacity: 100%; scale: .95;}
+}
+@keyframes returnOutlineColor  {
+    from {outline-color: #cba6f7; opacity: 100%; scale: .95;}
+    to {outline-color: #74c7ec; opacity: 70%; scale: 1;}
+}
+@keyframes buttonClick{
+    from {scale: .95;}
+    to {scale: .9;}
+}
+
+body {
+    padding: 0px;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: 0px;
+}
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -6,7 +26,7 @@
     align-content: center;
     max-width: 70%;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1000px){
     .center {
         max-width: 90%
     }
@@ -15,13 +35,6 @@ p {
     font-size: 1.5rem;
     padding-left: 2.5%;
     padding-right: 2.5%;
-}
-body {
-    background-color: #323232; 
-    color: azure; 
-    font-family: Arial, Helvetica, sans-serif; 
-    margin: 0px;
-    padding: 0px;
 }
 h1 {
     text-align: center;
@@ -35,40 +48,60 @@ h2 {
     padding: 1%;
 }
 a:link, a:visited {
-    color: aqua;
+    color: #74c7ec;
 }
 
 a:hover {
-    color:red;
+    color:#b4befe;
     cursor: pointer;
 }
 a:active{
-    color:red;
+    color:#b4befe;
 }
 hr{
-    opacity: 65%;
+    opacity: 70%;
     max-width: 120%;
     margin-top: 15px;
     margin-bottom: 15px;
+    border-color: 2px solid #74c7ec;
 }
 
 button {
-    background-color: #292929;
+    background-color: #313244;
     border: none;
     border-radius: 10px;
-    color: azure;
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     font-size:1.5rem;
-    opacity: 65%;
+    opacity: 70%;
     align-content: center;
+    outline: 2px solid #74c7ec;
+    width: fit-content;
+    color: #cdd6f4;
+}
+
+button:active{
+    scale: .9;
+    animation-name: buttonClick;
+    animation-duration: .1;
 }
 
 button:hover{
     opacity: 100%;
-    cursor: pointer;    
+    cursor: pointer;
+    outline: 2px solid #cba6f7;
+    animation-name: changeOutlineColor;
+    animation-duration: .25s;
+    scale: .95;
 }
+
+button:not(:hover){
+    animation-name: returnOutlineColor;
+    animation-duration: .35s;
+    scale: 1;
+}
+
 button img {
     height: auto;
     width: 15%; 
@@ -98,8 +131,9 @@ button img {
 
 .headderContainer{
     display: flex;
-    background-color: #292929;
+    background-color: #181825;
     padding: 1%;
+    border-bottom: 2px solid #74c7ec;
 }
 
 .headderColumn{
@@ -113,12 +147,45 @@ button img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    display: flexbox;
 }   
-
-.galleryContainer img {
-    max-width: calc(32% - 20px);
-    height: fit-content;
-    max-height: 50%;
+.galleryColumn{
+    width: calc(32% - 10px);
+    margin: 5px;
+    float: left;
+}
+.galleryColumn img{
+    width: 100%;
+    margin: 5px;
+    outline: 2px solid #74c7ec;
+    border-radius: 10px;
+}   
+.assignments{
+    display: flexbox;
+}
+.assignments img{
     margin: 10px;
-    background-color: azure;
-}   
+}
+
+.assignments div{
+    float: left;
+    margin: 5px
+}
+
+.asignment {
+    width: 100%;
+}
+
+.short{
+    width: calc(50% - 10px);
+    margin: 5px;
+    float: left;
+    justify-content: center;
+}
+
+.short img{
+    float: none;
+    max-width: 100%;
+    max-height: 500px;
+    opacity: 100%
+}
