@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts/elements.js"></script>
+        <link rel="icon" type="image/png" href="/favicons/favicon-48x48.png" sizes="48x48" />
+        <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="FTC-NPE" />
+        <link rel="manifest" href="/favicons/site.webmanifest" />
+        <script src="scripts/address.js"></script>
+    </head>
+    <body onload="generateElements(); getAddress();">
+        <span id="headder"></span>
+        <div class ="center" style="align-self: center;">
+            <h1 class="center" style="align-self: center;">
+                Null Pointer Exception
+            </h1>
+            <p>
+                Process: com.ftcnullpointerexception.webste, PID 27971
+                java.lang.NullPointerException: Attempted to invoke virtual method at '<b><span id="address"></span></b>' on a null object reference
+                    at <span id="address"></span>
+                    at <b>ftcnullpointerexception.com</b>
+                    at <b>iristherainbow.github.io/ftcnullpointerexception.com</b>
+                    at <b>iristherainbow.github.io</b>
+            </p>
+        </div>
+        <div>
+            <span id="footer"></span>
+        </div>
+    </body> 
+</html>

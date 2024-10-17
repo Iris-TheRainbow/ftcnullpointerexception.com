@@ -59,13 +59,13 @@ async function getEvents() {
 async function getOpr() {
     await axios.post("https://api.ftcscout.org/graphql", {
         query: `{
-        teamByNumber(number: 27971){
-            quickStats(season: 2023){
-            tot{
-                value
+            teamByNumber(number: 27971){
+                quickStats(season: 2023){
+                    tot{
+                        value
+                    }
+                }
             }
-            }
-        }
         }`
     })
         .then(response => {
