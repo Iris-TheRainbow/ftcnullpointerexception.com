@@ -21,7 +21,7 @@ function generateElements(){
                     <button onclick="window.location.href='donate'">Donate</button>
                 </div>
                 <div style="float: right;">
-                    <button onclick="window.location.href='mailto:nullpointerexception@gmail.com'">Email our team!</button>
+                    <button onclick="window.location.href='mailto:ftcnullpointerexception@gmail.com'">Email our team!</button>
                 </div>
             </div>
     `
