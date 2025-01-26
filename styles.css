@@ -192,3 +192,13 @@ button img {
     max-height: 500px;
     opacity: 100%
 }
+.sponsors {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sponsors div{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}

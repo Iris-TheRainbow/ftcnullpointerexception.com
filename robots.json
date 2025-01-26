@@ -1,6 +1,11 @@
 {
     "robots": [
         {
+            "name": "Into the Deep",
+            "description": "The one and only season for NPE, we worked hard to make our robot the absolute best we possibly could. At our first meet, we didn't have time to build our horizontal extention. At meet 2 we switched to a claw to claw passthrough and it worked amazing. Meet 3 was rough for us, however we ended up doing alright and went into our league tournament 9-1.",
+            "images": []
+        },
+        {
             "name": "Centerstage",
             "description": "This is the robot that our team members competed with on 15031 all season.",
             "images": ["img/CSLM1.jpg", "img/CSLM3.jpg", "img/CSLeagueTourny.jpg"]
